@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book Harbor - Find Your Next Read</title>
+<link rel="stylesheet" href="{{ url_for('static',filename='styles/style.css') }}">
+</head>
+<body>
+    <header class="header">
+    <nav class="nav-bar">
+        <h1 style="color: white;">📚 FreeRead</h1>
+        <div class="auth-buttons">
+            <button class="auth-button">Register</button>
+            <a href="{{url_for('login')}}" ><button class="auth-button">Login</button></a>
+        </div>
+    </nav>
+    
+    <div class="search-container">
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Search for books by title, author, or ISBN...">
+            <button id="searchButton">Search</button>
+        </div>
+
+        <div class="filters">
+            <select class="filter-select" id="genreFilter">
+                <option value="">All Genres</option>
+                <option value="fiction">Fiction</option>
+                <option value="non-fiction">Non-Fiction</option>
+                <option value="science-fiction">Sci-Fi</option>
+                <option value="fantasy">Fantasy</option>
+            </select>
+
+            <select class="filter-select" id="yearFilter">
+                <option value="">Any Year</option>
+                <option value="2023">2023</option>
+                <option value="2022">2022</option>
+                <option value="2021">2021</option>
+            </select>
+        </div>
+    </div>
+</header> 
+
+{% block content%}{%endblock%}
+</body>

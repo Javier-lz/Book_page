@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div> <p> This is to know the page is recognised</p></div>
+{%for author in books %}
+{{author}} published {{books[author]}}
+{% endfor %}
+{% endblock %}
