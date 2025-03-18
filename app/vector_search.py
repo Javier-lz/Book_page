@@ -4,14 +4,14 @@ import pathlib
 import textwrap
 from collections import defaultdict
 import google.generativeai as genai
-
+from api_keys import Password
 
 books=pd.read_csv('app/data/book_cleaned.csv')
 def to_markdown(text):
   text = text.replace('•', '  *')
   return Markdown(textwrap.indent(text, '> ', predicate=lambda _: True))
 
-genai.configure(api_key='AIzaSyAEiAHliaIA9ckFFxd-5toP9y04xIxhQJs')
+genai.configure(api_key=Password.password)
 
 
 for m in genai.list_models():
